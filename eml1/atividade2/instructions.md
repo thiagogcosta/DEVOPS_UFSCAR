@@ -16,9 +16,22 @@ Não menos importante, as features foram selecionadas conforme uma Análise de D
 ## Pré-requisitos
 Python 3.11 instalado no sistema. Além disso, é necessário a instalação das bibliotecas presentes no requirements.txt
 
+## Instalação
+* Instruções para a instalação e configuração do projeto.
+  1 - Clone o repositório:
+  ```bash 
+  git clone -b main https://github.com/thiagogcosta/DEVOPS_UFSCAR.git
+  ```
+  2 - Navegue até o repositório da api:
+  ```bash 
+  cd DEVOPS_UFSCAR/eml1/atividade2/api/
+  ```
+  3 - Instale as dependências:
+  ```bash 
+  pip install -r requirements.txt
+  ```
+  
 ## Execução local
-
-## Execução via API
 * Execute o arquivo app.py para que seja iniciado o servidor Flask:
   ```python 
   python3 app.py
@@ -34,6 +47,8 @@ Python 3.11 instalado no sistema. Além disso, é necessário a instalação das
   ```bash 
   docker run api_deteccao_fraude
   ```
+
+## Como utilizar a API de detecção de fraudes
 * Desse modo, para que seja possível a execução da API de detecção de fraudes basta enviar requisições GET para a rota /predict com os seguintes parâmetros: amt, merchant_1, merchant_2, category, year, city_pop.
 
 * A seguir há um exemplo utilizando o software Insonmia, no qual proporciona a execução de testes em API.
@@ -41,9 +56,9 @@ Python 3.11 instalado no sistema. Além disso, é necessário a instalação das
   * Exemplo de caso de fraude:
 
     * URL: http://172.17.0.2:8000/predict?amt=884.54&merchant_1=626&merchant_2=116&category=12&year=1983&city_pop=178
-    * Imagem:
+    * Imagem: ![is_fraud](is_fraud.png)
    
   * Exemplo de caso em que não é fraude:
 
     * URL: http://172.17.0.2:8000/predict?amt=40.31&merchant_1=567&merchant_2=75&category=2&year=1987&city_pop=12335
-    * Imagem:
+    * Imagem: ![is_not_fraud](is_not_fraud.png)
